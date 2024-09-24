@@ -22,7 +22,7 @@ export function LandingPage(){
 
     return(
         <div className="w-full h-full">
-            <div className="w-full h-full relative border border-black">
+            <div className="w-full h-full relative border border-black overflow-hidden">
                 <div className="w-full h-full absolute z-20 flex flex-col items-center justify-center pt-14 lg:pt-20">
                     <div className="w-72 md:w-[600px] text-white text-2xl md:text-5xl font-bold text-center">
                         Building reliable software solutions that stand the test of time 
@@ -55,22 +55,194 @@ export function LandingPage(){
                 </video>    
             </div>
 
-            <div className="w-full h-full flex flex-col items-end justify-center border border-black px-20">
-                <div className="relative w-[800px] flex flex-row items-center justify-center border border-black">
-                    <div className="z-10 absolute left-0 bg-white flex flex-col items-start justify-center px-8 w-[500px] py-8 rounded-tr-[50px] rounded-br-lg">
-                        <div className="w-64 text-xl font-bold text-blue-800">Leverage the power of Software and Automation</div>
+            <div className="z-20 w-full h-auto flex flex-col items-end justify-start lg:px-14 overflow-hidden">
+                <div className="border border-red-700 solid md:mt-10 relative w-full h-[600px] lg:w-[800px] lg:h-[500px] flex flex-row items-center justify-center">
+                    <div className="shadow-lg z-10 absolute left-0 bg-white flex flex-col items-start justify-center p-6 md:p-8 w-[300px] md:w-[550px] lg:w-[500px] rounded-tr-[50px] rounded-br-lg">
+                        <div className="w-56 md:w-80 lg:w-64 text-lg md:text-2xl lg:text-xl font-bold text-blue-800">Leverage the power of Software and Automation</div>
 
-                        <div className="mt-2 text-xs">
+                        <div className="mt-2 text-[10px] md:text-sm lg:text-xs">
                             We provide automated solutions and software that help businesses, companies and organizations eliminate repititive tasks
                             optimize of resource usage, lower operational costs, streamline workflows and minimize waste.<br/><br/>
                             Get in touch with us to know our affordable offers that would accelerate your business growth and efficiency.
                         </div>
 
-                        <button className="mt-14 md:mt-28 lg:mt-6 text-sm md:text-lg lg:text-sm bg-blue-700 font-semibold text-white py-2 px-4 md:py-4 md:px-8 lg:py-3 lg:px-6 rounded-md">
-                            Check out our service
+                        <button className="mt-6 md:mt-10 lg:mt-6 text-xs md:text-lg lg:text-sm bg-blue-700 font-semibold text-white py-2 px-4 md:py-4 md:px-8 lg:py-3 lg:px-6 rounded-md">
+                            Check out our services
                         </button>
                     </div>
-                    <img alt="neonglobe" className="absolute right-0 w-[600px] rounded-tr-2xl rounded-bl-[80px]" src="/img/globemodel.jpg"/>
+                    <img alt="neonglobe" className="absolute -right-28 md:-right-60 lg:right-0 w-auto h-[480px] lg:w-[600px] lg:h-auto rounded-tr-2xl rounded-bl-[80px]" src="/img/globemodel.jpg"/>
+                </div>
+            </div>
+
+            <div className="z-20 w-full h-auto flex flex-col items-start justify-start lg:px-14 overflow-hidden">
+                <div className="border border-red-700 solid md:mt-10 relative w-full h-[600px] lg:w-[800px] lg:h-[500px] flex flex-row items-center justify-center">
+                    <div className="shadow-lg z-10 absolute right-0 bg-white flex flex-col items-end justify-center p-6 md:p-8 w-[300px] md:w-[550px] lg:w-[500px] rounded-tl-[50px] rounded-bl-lg">
+                        <div className="w-36 md:w-80 lg:w-80 text-lg md:text-2xl lg:text-xl font-bold text-blue-800 text-right">Unlocking Order in the Chaos</div>
+
+                        <div className="mt-2 text-[10px] md:text-sm lg:text-xs text-right">
+                            Data is everywhere even in businesses, companies and organizations. Large, random but yet very important and holding the key to 
+                            optimization of processes and better decision making by administrative bodies.<br/><br/>
+                            Use cutting edge technology to reveal hidden patterns in this field of randomness and boost your business to greater levels of growth.
+                        </div>
+
+                        <button className="mt-6 md:mt-10 lg:mt-6 text-xs md:text-lg lg:text-sm bg-blue-700 font-semibold text-white py-2 px-4 md:py-4 md:px-8 lg:py-3 lg:px-6 rounded-md">
+                            Check out our services
+                        </button>
+                    </div>
+                    <img alt="neonglobe" className="absolute -left-28 md:-left-60 lg:left-0 h-[480px] lg:w-[600px] rounded-tl-2xl rounded-br-[80px]" src="/img/randomwaves.jpg"/>
+                </div>
+            </div>
+
+            <div className="z-20 w-full h-auto flex flex-col items-end justify-start lg:px-14 overflow-hidden">
+                <div className="border border-red-700 solid md:mt-10 relative w-full h-[600px] lg:w-[800px] lg:h-[500px] flex flex-row items-center justify-center">
+                    <div className="shadow-lg z-10 absolute left-0 bg-white flex flex-col items-start justify-center p-6 md:p-8 w-[300px] md:w-[550px] lg:w-[500px] rounded-tr-[50px] rounded-br-lg">
+                        <div className="w-36 md:w-80 lg:w-80 text-lg md:text-2xl lg:text-xl font-bold text-blue-800">Technology that works for you</div>
+
+                        <div className="mt-2 text-[10px] md:text-sm lg:text-xs">
+                            We design custom software and automation tools that simplify operations and elevate efficiency for your 
+                            business. Our solutions are built to seamlessly integrate with your workflow, reducing manual tasks and 
+                            unlocking greater productivity.<br/><br/>
+                            Whether it’s streamlining processes or developing tailored systems, we create technology that works for you.
+                        </div>
+
+                        <button className="mt-6 md:mt-10 lg:mt-6 text-xs md:text-lg lg:text-sm bg-blue-700 font-semibold text-white py-2 px-4 md:py-4 md:px-8 lg:py-3 lg:px-6 rounded-md">
+                            Check out our services
+                        </button>
+                    </div>
+                    <img alt="neonglobe" className="absolute -right-28 md:-right-60 lg:right-0 h-[480px] lg:w-[600px] rounded-tr-2xl rounded-bl-[80px]" src="/img/datastream.jpg"/>
+                </div>
+            </div>
+
+            <div className="w-full py-10 md:py-20 lg:px-10 bg-gradient-to-r from-[#000046] to-[#1CB5E0] flex flex-col items-center justify-center">
+                <div className="text-xl md:text-3xl font-bold text-white">HOW IT GETS DONE</div>
+                <div className="text-white text-sm md:text-lg font-semibold">Easy Process</div>
+                <div className="mt-6 w-full md:w-[800px] flex flex-row items-start justify-center flex-wrap border border-white">
+                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                        <img alt="ask" className="w-10 md:w-20" src="/img/ask.png"/>
+                        <div>
+                            <div className="flex flex-row items-center justify-start">
+                                <div className="text-lg md:text-3xl font-bold text-white">01</div>
+                                <div className="ml-2 md:ml-4 font-semibold text-white text-xs md:text-base">YOU ASK</div>
+                            </div>
+                            <div className="text-[10px] md:text-sm mt-2 text-white">
+                                Get in contact with us using any of our social or contact handles and tell us about the challenge.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                        <img alt="build" className="w-10 md:w-20" src="/img/build.png"/>
+                        <div>
+                            <div className="flex flex-row items-center justify-start">
+                                <div className="text-lg md:text-3xl font-bold text-white">02</div>
+                                <div className="ml-2 md:ml-4 font-semibold text-white text-xs md:text-base">WE BUILD</div>
+                            </div>
+                            <div className="text-[10px] md:text-sm mt-2 text-white">
+                                We get to work building a system (software) that solves the challenge that was discussed about.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                        <img alt="test" className="w-10 md:w-20" src="/img/test.png"/>
+                        <div>
+                            <div className="flex flex-row items-center justify-start">
+                                <div className="text-lg md:text-3xl font-bold text-white">03</div>
+                                <div className="ml-2 md:ml-4 font-semibold text-white text-xs md:text-base">YOU TEST</div>
+                            </div>
+                            <div className="text-[10px] md:text-sm mt-2 text-white">
+                                We give you a demo of the solution to test its abilities and determine if it solves the problem.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                        <img alt="feedback" className="w-10 md:w-20" src="/img/feedback.png"/>
+                        <div>
+                            <div className="flex flex-row items-center justify-start">
+                                <div className="text-lg md:text-3xl font-bold text-white">04</div>
+                                <div className="ml-2 md:ml-4 font-semibold text-white text-xs md:text-base">FEEDBACK</div>
+                            </div>
+                            <div className="text-[10px] md:text-sm mt-2 text-white">
+                                You give us some feedback on what to improve and preferable changes to be made or custom designs.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                        <img alt="optimize" className="w-10 md:w-20" src="/img/optimize.png"/>
+                        <div>
+                            <div className="flex flex-row items-center justify-start">
+                                <div className="text-lg md:text-3xl font-bold text-white">05</div>
+                                <div className="ml-2 md:ml-4 font-semibold text-white text-xs md:text-base">WE OPTIMIZE</div>
+                            </div>
+                            <div className="text-[10px] md:text-sm mt-2 text-white">
+                                We optimize and improve this software solution for better user experience and system efficiency.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                        <img alt="negotiate" className="w-10 md:w-20" src="/img/negotiate.png"/>
+                        <div>
+                            <div className="flex flex-row items-center justify-start">
+                                <div className="text-lg md:text-3xl font-bold text-white">06</div>
+                                <div className="ml-2 md:ml-4 font-semibold text-white text-xs md:text-base">WE NEGOTIATE</div>
+                            </div>
+                            <div className="text-[10px] md:text-sm mt-2 text-white">
+                                We negotiate a deal and come to an agreement on the payment for the value we have just delivered.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="w-full py-10 md:py-20 lg:px-10 flex flex-col items-center justify-center overflow-hidden">
+                <div className="text-xl md:text-3xl font-bold text-blue-700 mb-10">WHAT WE OFFER</div>
+
+                <div className="border-l-4 md:border-l-8 border-blue-700 w-[300px] md:w-[700px] flex flex-row items-start justify-start shadow-lg py-4 px-3 md:py-6 md:px-8 rounded-r-lg">
+                    <img alt="" className="w-6 md:w-10" src="/img/creation.png"/>
+                    <div className="ml-3 md:ml-8 flex flex-col items-start justify-start">
+                        <div className="text-blue-700 w-36 md:w-auto text-sm md:text-lg font-bold underline">Building Applications and Software</div>
+                        <div className="mt-2 text-[10px] md:text-sm">
+                            We specialize in building software and applications designed to meet your business's unique needs and solve 
+                            the challenges discussed during contact. From concept to deployment, we deliver innovative, scalable solutions 
+                            that enhance performance, streamline operations and drive success.<br/><br/>
+                            We in creating mobile, desktop and web application software that empowers businesses to thrive in today’s 
+                            digital landscape. Whether you're looking to build a user-friendly mobile app, a powerful desktop solution 
+                            or a seamless web platform, we craft intuitive, high-performance applications tailored to your goals with 
+                            scalable architecture.
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-12 border-r-4 md:border-r-8 border-blue-700 w-[300px] md:w-[700px] flex flex-row-reverse items-start justify-end shadow-lg py-4 px-3 md:py-6 md:px-8 rounded-l-lg">
+                    <img alt="" className="w-6 md:w-10" src="/img/maintenance.png"/>
+                    <div className="mr-3 md:mr-8 flex flex-col items-end justify-start">
+                        <div className="text-blue-700 text-sm md:text-lg font-bold underline text-right">Maintaining our products</div>
+                        <div className="mt-2 text-[10px] md:text-sm text-right">
+                            We offers comprehensive software maintenance services to ensure software that we built for you or was purchased
+                            from us runs smoothly and stays up to date. From troubleshooting and bug fixes to updates and performance optimization, 
+                            we handle the ongoing care of our software so you can focus on your business.<br/><br/>
+                            You also get to enjoy a guarantee for free repairs on all software or application solution built for you or
+                            purchased from us. At Resilient we focus on customer satisfaction and our goal is to use tailord software to 
+                            solve any challenges/problems faced by our customer's business, company or organization.
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-12 border-l-4 md:border-l-8 border-blue-700 w-[300px] md:w-[700px] flex flex-row items-start justify-start shadow-lg py-4 px-3 md:py-6 md:px-8 rounded-r-lg">
+                    <img alt="" className="w-6 md:w-10" src="/img/consultancy.png"/>
+                    <div className="ml-3 md:ml-8 flex flex-col items-start justify-start">
+                        <div className="text-blue-700 text-sm md:text-lg font-bold underline">Consultancy</div>
+                        <div className="mt-2 text-[10px] md:text-sm">
+                            We provide expert guidance to help you navigate complex software and technology decisions. Whether you’re 
+                            looking to optimize existing systems, implement new solutions, or explore cutting-edge innovations, our team 
+                            offers strategic insights tailored to your business goals.<br/><br/>
+                            From planning to execution, we ensure challenges and problems are duly fixed with software that fits your taste
+                            in order to drive efficiency, growth, and long-term success of your business, organization or company.
+                        </div>
+                    </div>
                 </div>
             </div>
             
