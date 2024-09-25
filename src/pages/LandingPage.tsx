@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react"
+import { PRIMARYBLUE1 } from "../utils/theme";
 
 export function LandingPage(){
     const homeScrollRef = useRef<HTMLDivElement|null>(null);
@@ -70,7 +71,7 @@ export function LandingPage(){
                             Check out our services
                         </button>
                     </div>
-                    <img alt="neonglobe" className="absolute -right-28 md:-right-60 lg:right-0 w-auto h-[480px] lg:w-[600px] lg:h-auto rounded-tr-2xl rounded-bl-[80px]" src="/img/globemodel.jpg"/>
+                    <img alt="neonglobe" className="absolute -right-28 md:-right-60 lg:right-0 w-auto lg:h-auto h-[480px] lg:w-[600px] lg:h-auto rounded-tr-2xl rounded-bl-[80px]" src="/img/globemodel.jpg"/>
                 </div>
             </div>
 
@@ -89,7 +90,7 @@ export function LandingPage(){
                             Check out our services
                         </button>
                     </div>
-                    <img alt="neonglobe" className="absolute -left-28 md:-left-60 lg:left-0 h-[480px] lg:w-[600px] rounded-tl-2xl rounded-br-[80px]" src="/img/randomwaves.jpg"/>
+                    <img alt="neonglobe" className="absolute -left-28 md:-left-60 lg:left-0 w-auto w-auto h-[480px] lg:h-auto lg:w-[600px] rounded-tl-2xl rounded-br-[80px]" src="/img/randomwaves.jpg"/>
                 </div>
             </div>
 
@@ -245,7 +246,73 @@ export function LandingPage(){
                     </div>
                 </div>
             </div>
-            
+
+            <div className=" mt-10 z-20 w-full h-auto flex flex-col items-center justify-start lg:px-14 overflow-hidden lg:pb-40">
+                <div className="border border-red-700 solid md:mt-10 relative w-full h-[135vh] md:h-[90vh] lg:h-[100vh] lg:w-[800px] flex flex-row items-start justify-center">
+                    <div className="shadow-lg z-10 absolute top-[20%] right-0 bg-white flex flex-col items-start justify-center p-6 md:p-8 w-full md:w-[550px] lg:w-[550px] rounded-tl-[50px] rounded-bl-lg">
+                        <div className="font-bold text-lg md:text-2xl mb-4">Connect With Us Today<br/>Let's Build A Solution</div>
+                    
+                        <label className="text-xs md:text-sm font-semibold text-slate-500">Company Name</label>
+                        <input type="text" className="mb-4 w-full border-b border-slate-400 text-xs md:text-sm py-2 focus:outline-none active:outline-none"/>
+                        
+                        <label className="text-xs md:text-sm font-semibold text-slate-500">Company Address</label>
+                        <input type="text" className="mb-4 w-full border-b border-slate-400 text-xs md:text-sm py-2 focus:outline-none active:outline-none"/>
+
+                        <div className="flex flex-row items-center justify-between">
+                            <div className="w-[48%]">
+                            <label className="text-xs md:text-sm font-semibold text-slate-500">Your Name</label>
+                            <input type="text" className="mb-4 w-full border-b border-slate-400 text-xs md:text-sm py-2 focus:outline-none active:outline-none"/>
+                            </div>
+                            <div className="w-[48%]">
+                            <label className="text-xs md:text-sm font-semibold text-slate-500">Your Role</label>
+                            <input type="text" className="mb-4 w-full border-b border-slate-400 text-xs md:text-sm py-2 focus:outline-none active:outline-none"/>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-row items-center justify-between">
+                            <div className="w-[48%]">
+                            <label className="text-xs md:text-sm font-semibold text-slate-500">Phone Number</label>
+                            <input type="phone" className="mb-4 w-full border-b border-slate-400 text-xs md:text-sm py-2 focus:outline-none active:outline-none"/>
+                            </div>
+                            <div className="w-[48%]">
+                            <label className="text-xs md:text-sm font-semibold text-slate-500">Email</label>
+                            <input type="email" className="mb-4 w-full border-b border-slate-400 text-xs md:text-sm py-2 focus:outline-none active:outline-none"/>
+                            </div>
+                        </div>
+
+                        <label className="text-xs md:text-sm font-semibold text-slate-500">Details</label>
+                        <textarea className="resize-none mb-4 w-full h-28 border-b border-slate-400 text-xs md:text-sm py-2 focus:outline-none active:outline-none" placeholder="Tell us everything you can, we'll reach out to you for further enquiries"></textarea>
+                    
+                        <button className="mt-6 md:mt-10 lg:mt-6 text-xs md:text-lg lg:text-sm font-semibold text-white py-2 px-4 md:py-4 md:px-8 lg:py-3 lg:px-6 rounded-md" style={{backgroundColor:PRIMARYBLUE1}}>
+                            Reach out to us
+                        </button>
+                    </div>
+                    <img alt="neonglobe" className="absolute block -left-0 md:-left-60 lg:left-0 w-auto h-auto lg:w-[600px] rounded-tl-2xl rounded-br-[80px]" src="/img/supportimg.jpg"/>
+                </div>
+            </div>
+
+            <div className="py-6 md:py-8 px-5 md:px-10 lg:px-12 flex flex-col items-start justify-start" style={{background:PRIMARYBLUE1}}>
+                <div className="w-full flex flex-col md:flex-row items-start justify-start">
+                    <div>
+                        <div className="font-regular text-sm md:text-xl text-white">RESILIENT SOFTWARE CO.</div>
+                        <div className="text-white text-xs">Building reliable solutions that stands the test of time</div>
+                    </div>
+                    <div className="mt-6 md:mt-0 ml-0 md:ml-20 text-white flex flex-col items-start justify-start">
+                        <div className="text-xs md:text-base flex flex-row items-center justify-start mb-2 md:mb-4">
+                            <img className="w-3 md:w-5 mr-2" src="/img/phone.png"/>
+                            +234 706 965 1848
+                        </div>
+                        <div className="text-xs md:text-base flex flex-row items-center justify-start mb-2 md:mb-4">
+                            <img className="w-3 md:w-5 mr-2" src="/img/email.png"/>
+                            resilientcompany@gmail.com
+                        </div>
+                    </div>
+                </div>
+                    
+                <div className="text-xs md:text-sm font-semibold w-full text-center pt-10 text-white">
+                    Resilient Software Co. &copy; 2024
+                </div>
+            </div>
         </div>
     )
 }
