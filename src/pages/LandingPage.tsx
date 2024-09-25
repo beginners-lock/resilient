@@ -14,7 +14,91 @@ export function LandingPage(){
                 homeScrollRef.current!.scrollLeft = 340*(homeframe+1);
                 setHomeframe(prev=>prev+1);
             }
-         }, 4000); 
+        }, 4000);
+
+        // Callback for IntersectionObserver
+        const callback: IntersectionObserverCallback = function (entries) {
+            entries.forEach((entry) => {
+                // Is the element in the viewport?
+                if (entry.isIntersecting) {
+                    if(entry.target.classList.contains('bounced1')){
+                        // Add the fadeIn class:
+                        entry.target.classList.add("motion-safe:animate-bounceInD1");
+                    }
+                    if(entry.target.classList.contains('bounced2')){
+                        // Add the fadeIn class:
+                        entry.target.classList.add("motion-safe:animate-bounceInD2");
+                    }
+                    if(entry.target.classList.contains('bounced3')){
+                        // Add the fadeIn class:
+                        entry.target.classList.add("motion-safe:animate-bounceInD3");
+                    }
+                    if(entry.target.classList.contains('fadein')){
+                        // Add the fadeIn class:
+                        entry.target.classList.add("motion-safe:animate-fadeInMd");
+                    }
+                
+                } else {
+                    if(entry.target.classList.contains('bounced1')){
+                        // Add the fadeIn class:
+                        entry.target.classList.remove("motion-safe:animate-bounceInD1");
+                    }
+                    if(entry.target.classList.contains('bounced2')){
+                        // Add the fadeIn class:
+                        entry.target.classList.remove("motion-safe:animate-bounceInD2");
+                    }
+                    if(entry.target.classList.contains('bounced3')){
+                        // Add the fadeIn class:
+                        entry.target.classList.remove("motion-safe:animate-bounceInD3");
+                    }
+                    if(entry.target.classList.contains('fadein')){
+                        // Add the fadeIn class:
+                        entry.target.classList.remove("motion-safe:animate-fadeInMd");
+                    }
+                }
+            });
+        };
+
+        // Get all the elements you want to show on scroll
+        const bounced1 = document.querySelectorAll(".bounced1");
+        const bounced2 = document.querySelectorAll(".bounced2");
+        const bounced3 = document.querySelectorAll(".bounced3");
+        const fadein = document.querySelectorAll(".fadein");
+
+        // Set up a new observer
+        const observer = new IntersectionObserver(callback, );
+
+        fadein.forEach(function (target) {
+            // Hide the element
+            target.classList.add("opacity-0");
+
+            // Add the element to the watcher
+            observer.observe(target);
+        });
+        
+        bounced1.forEach(function (target) {
+            // Hide the element
+            target.classList.add("opacity-0");
+
+            // Add the element to the watcher
+            observer.observe(target);
+        });
+
+        bounced2.forEach(function (target) {
+            // Hide the element
+            target.classList.add("opacity-0");
+
+            // Add the element to the watcher
+            observer.observe(target);
+        });
+
+        bounced3.forEach(function (target) {
+            // Hide the element
+            target.classList.add("opacity-0");
+
+            // Add the element to the watcher
+            observer.observe(target);
+        }); 
 
         return ()=>{
             clearInterval(home);
@@ -25,10 +109,10 @@ export function LandingPage(){
         <div className="w-full h-full">
             <div className="w-full h-full relative border border-black overflow-hidden">
                 <div className="w-full h-full absolute z-20 flex flex-col items-center justify-center pt-14 lg:pt-20">
-                    <div className="w-72 md:w-[600px] text-white text-2xl md:text-5xl font-bold text-center">
+                    <div className="bounced1 w-72 md:w-[600px] text-white text-2xl md:text-5xl font-bold text-center">
                         Building reliable software solutions that stand the test of time 
                     </div>
-                    <div className="flex flex-col items-center justify-center mt-14 md:mt-28 lg:mt-0">
+                    <div className="bounced2 flex flex-col items-center justify-center mt-14 md:mt-28 lg:mt-0">
                         <div ref={homeScrollRef} className="snap-x snap-mandatory font-semibold flex flex-row items-center justify-start text-white w-60 md:w-auto h-32 md:h-60 overflow-hidden scroll-smooth">
                             <div className="snap-center min-w-60 max-w-60 md:h-24 text-xs md:text-lg px-10 text-center flex flex-row items-center justify-center">
                                 Functional and relevant software designed for longevity and scalability
@@ -47,7 +131,7 @@ export function LandingPage(){
                         </div>
                     </div>
 
-                    <button className="mt-14 md:mt-28 lg:mt-8 text-sm md:text-lg lg:text-base text-blue-700 font-semibold bg-white py-2 px-4 md:py-4 md:px-8 lg:py-3 lg:px-6 rounded-md">
+                    <button className="bounced3 mt-14 md:mt-28 lg:mt-8 text-sm md:text-lg lg:text-base text-blue-700 font-semibold bg-white py-2 px-4 md:py-4 md:px-8 lg:py-3 lg:px-6 rounded-md">
                         Build me a solution
                     </button>
                 </div>
@@ -58,7 +142,7 @@ export function LandingPage(){
 
             <div className="z-20 w-full h-auto flex flex-col items-end justify-start lg:px-14 overflow-hidden">
                 <div className="border border-red-700 solid md:mt-10 relative w-full h-[600px] lg:w-[800px] lg:h-[500px] flex flex-row items-center justify-center">
-                    <div className="shadow-lg z-10 absolute left-0 bg-white flex flex-col items-start justify-center p-6 md:p-8 w-[300px] md:w-[550px] lg:w-[500px] rounded-tr-[50px] rounded-br-lg">
+                    <div className="bounced2 shadow-lg z-10 absolute left-0 bg-white flex flex-col items-start justify-center p-6 md:p-8 w-[300px] md:w-[550px] lg:w-[500px] rounded-tr-[50px] rounded-br-lg">
                         <div className="w-56 md:w-80 lg:w-64 text-lg md:text-2xl lg:text-xl font-bold text-blue-800">Leverage the power of Software and Automation</div>
 
                         <div className="mt-2 text-[10px] md:text-sm lg:text-xs">
@@ -71,13 +155,13 @@ export function LandingPage(){
                             Check out our services
                         </button>
                     </div>
-                    <img alt="neonglobe" className="absolute -right-28 md:-right-60 lg:right-0 w-auto lg:h-auto h-[480px] lg:w-[600px] lg:h-auto rounded-tr-2xl rounded-bl-[80px]" src="/img/globemodel.jpg"/>
+                    <img alt="neonglobe" className="bounced1 absolute -right-28 md:-right-60 lg:right-0 w-auto lg:h-auto h-[480px] lg:w-[600px] lg:h-auto rounded-tr-2xl rounded-bl-[80px]" src="/img/globemodel.jpg"/>
                 </div>
             </div>
 
             <div className="z-20 w-full h-auto flex flex-col items-start justify-start lg:px-14 overflow-hidden">
                 <div className="border border-red-700 solid md:mt-10 relative w-full h-[600px] lg:w-[800px] lg:h-[500px] flex flex-row items-center justify-center">
-                    <div className="shadow-lg z-10 absolute right-0 bg-white flex flex-col items-end justify-center p-6 md:p-8 w-[300px] md:w-[550px] lg:w-[500px] rounded-tl-[50px] rounded-bl-lg">
+                    <div className="bounced2 shadow-lg z-10 absolute right-0 bg-white flex flex-col items-end justify-center p-6 md:p-8 w-[300px] md:w-[550px] lg:w-[500px] rounded-tl-[50px] rounded-bl-lg">
                         <div className="w-36 md:w-80 lg:w-80 text-lg md:text-2xl lg:text-xl font-bold text-blue-800 text-right">Unlocking Order in the Chaos</div>
 
                         <div className="mt-2 text-[10px] md:text-sm lg:text-xs text-right">
@@ -90,13 +174,13 @@ export function LandingPage(){
                             Check out our services
                         </button>
                     </div>
-                    <img alt="neonglobe" className="absolute -left-28 md:-left-60 lg:left-0 w-auto w-auto h-[480px] lg:h-auto lg:w-[600px] rounded-tl-2xl rounded-br-[80px]" src="/img/randomwaves.jpg"/>
+                    <img alt="neonglobe" className="bounced1 absolute -left-28 md:-left-60 lg:left-0 w-auto w-auto h-[480px] lg:h-auto lg:w-[600px] rounded-tl-2xl rounded-br-[80px]" src="/img/randomwaves.jpg"/>
                 </div>
             </div>
 
             <div className="z-20 w-full h-auto flex flex-col items-end justify-start lg:px-14 overflow-hidden">
                 <div className="border border-red-700 solid md:mt-10 relative w-full h-[600px] lg:w-[800px] lg:h-[500px] flex flex-row items-center justify-center">
-                    <div className="shadow-lg z-10 absolute left-0 bg-white flex flex-col items-start justify-center p-6 md:p-8 w-[300px] md:w-[550px] lg:w-[500px] rounded-tr-[50px] rounded-br-lg">
+                    <div className="bounced2 shadow-lg z-10 absolute left-0 bg-white flex flex-col items-start justify-center p-6 md:p-8 w-[300px] md:w-[550px] lg:w-[500px] rounded-tr-[50px] rounded-br-lg">
                         <div className="w-36 md:w-80 lg:w-80 text-lg md:text-2xl lg:text-xl font-bold text-blue-800">Technology that works for you</div>
 
                         <div className="mt-2 text-[10px] md:text-sm lg:text-xs">
@@ -110,15 +194,15 @@ export function LandingPage(){
                             Check out our services
                         </button>
                     </div>
-                    <img alt="neonglobe" className="absolute -right-28 md:-right-60 lg:right-0 h-[480px] lg:w-[600px] rounded-tr-2xl rounded-bl-[80px]" src="/img/datastream.jpg"/>
+                    <img alt="neonglobe" className="bounced1 absolute -right-28 md:-right-60 lg:right-0 h-[480px] lg:w-[600px] rounded-tr-2xl rounded-bl-[80px]" src="/img/datastream.jpg"/>
                 </div>
             </div>
 
             <div className="w-full py-10 md:py-20 lg:px-10 bg-gradient-to-r from-[#000046] to-[#1CB5E0] flex flex-col items-center justify-center">
-                <div className="text-xl md:text-3xl font-bold text-white">HOW IT GETS DONE</div>
-                <div className="text-white text-sm md:text-lg font-semibold">Easy Process</div>
+                <div className="fadein text-xl md:text-3xl font-bold text-white">HOW IT GETS DONE</div>
+                <div className="fadein text-white text-sm md:text-lg font-semibold">Easy Process</div>
                 <div className="mt-6 w-full md:w-[800px] flex flex-row items-start justify-center flex-wrap border border-white">
-                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                    <div className="bounced1 border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
                         <img alt="ask" className="w-10 md:w-20" src="/img/ask.png"/>
                         <div>
                             <div className="flex flex-row items-center justify-start">
@@ -131,7 +215,7 @@ export function LandingPage(){
                         </div>
                     </div>
 
-                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                    <div className="bounced2 border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
                         <img alt="build" className="w-10 md:w-20" src="/img/build.png"/>
                         <div>
                             <div className="flex flex-row items-center justify-start">
@@ -144,7 +228,7 @@ export function LandingPage(){
                         </div>
                     </div>
                     
-                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                    <div className="bounced3 border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
                         <img alt="test" className="w-10 md:w-20" src="/img/test.png"/>
                         <div>
                             <div className="flex flex-row items-center justify-start">
@@ -157,7 +241,7 @@ export function LandingPage(){
                         </div>
                     </div>
                     
-                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                    <div className="bounced2 border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
                         <img alt="feedback" className="w-10 md:w-20" src="/img/feedback.png"/>
                         <div>
                             <div className="flex flex-row items-center justify-start">
@@ -170,7 +254,7 @@ export function LandingPage(){
                         </div>
                     </div>
                     
-                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                    <div className="bounced1 border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
                         <img alt="optimize" className="w-10 md:w-20" src="/img/optimize.png"/>
                         <div>
                             <div className="flex flex-row items-center justify-start">
@@ -183,7 +267,7 @@ export function LandingPage(){
                         </div>
                     </div>
                     
-                    <div className="border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
+                    <div className="bounced2 border border-white w-36 md:w-56 p-3 md:p-4 shadow-lg rounded-lg mx-4 mb-4">
                         <img alt="negotiate" className="w-10 md:w-20" src="/img/negotiate.png"/>
                         <div>
                             <div className="flex flex-row items-center justify-start">
@@ -199,9 +283,9 @@ export function LandingPage(){
             </div>
 
             <div className="w-full py-10 md:py-20 lg:px-10 flex flex-col items-center justify-center overflow-hidden">
-                <div className="text-xl md:text-3xl font-bold text-blue-700 mb-10">WHAT WE OFFER</div>
+                <div className="fadein text-xl md:text-3xl font-bold text-blue-700 mb-10">WHAT WE OFFER</div>
 
-                <div className="border-l-4 md:border-l-8 border-blue-700 w-[300px] md:w-[700px] flex flex-row items-start justify-start shadow-lg py-4 px-3 md:py-6 md:px-8 rounded-r-lg">
+                <div className="bounced1 border-l-4 md:border-l-8 border-blue-700 w-[300px] md:w-[700px] flex flex-row items-start justify-start shadow-lg py-4 px-3 md:py-6 md:px-8 rounded-r-lg">
                     <img alt="" className="w-6 md:w-10" src="/img/creation.png"/>
                     <div className="ml-3 md:ml-8 flex flex-col items-start justify-start">
                         <div className="text-blue-700 w-36 md:w-auto text-sm md:text-lg font-bold underline">Building Applications and Software</div>
@@ -217,7 +301,7 @@ export function LandingPage(){
                     </div>
                 </div>
 
-                <div className="mt-12 border-r-4 md:border-r-8 border-blue-700 w-[300px] md:w-[700px] flex flex-row-reverse items-start justify-end shadow-lg py-4 px-3 md:py-6 md:px-8 rounded-l-lg">
+                <div className="bounced1 mt-12 border-r-4 md:border-r-8 border-blue-700 w-[300px] md:w-[700px] flex flex-row-reverse items-start justify-end shadow-lg py-4 px-3 md:py-6 md:px-8 rounded-l-lg">
                     <img alt="" className="w-6 md:w-10" src="/img/maintenance.png"/>
                     <div className="mr-3 md:mr-8 flex flex-col items-end justify-start">
                         <div className="text-blue-700 text-sm md:text-lg font-bold underline text-right">Maintaining our products</div>
@@ -232,7 +316,7 @@ export function LandingPage(){
                     </div>
                 </div>
 
-                <div className="mt-12 border-l-4 md:border-l-8 border-blue-700 w-[300px] md:w-[700px] flex flex-row items-start justify-start shadow-lg py-4 px-3 md:py-6 md:px-8 rounded-r-lg">
+                <div className="bounced1 mt-12 border-l-4 md:border-l-8 border-blue-700 w-[300px] md:w-[700px] flex flex-row items-start justify-start shadow-lg py-4 px-3 md:py-6 md:px-8 rounded-r-lg">
                     <img alt="" className="w-6 md:w-10" src="/img/consultancy.png"/>
                     <div className="ml-3 md:ml-8 flex flex-col items-start justify-start">
                         <div className="text-blue-700 text-sm md:text-lg font-bold underline">Consultancy</div>
@@ -249,7 +333,7 @@ export function LandingPage(){
 
             <div className=" mt-10 z-20 w-full h-auto flex flex-col items-center justify-start lg:px-14 overflow-hidden lg:pb-40">
                 <div className="border border-red-700 solid md:mt-10 relative w-full h-[135vh] md:h-[90vh] lg:h-[100vh] lg:w-[800px] flex flex-row items-start justify-center">
-                    <div className="shadow-lg z-10 absolute top-[20%] right-0 bg-white flex flex-col items-start justify-center p-6 md:p-8 w-full md:w-[550px] lg:w-[550px] rounded-tl-[50px] rounded-bl-lg">
+                    <div className="bounced2 shadow-lg z-10 absolute top-[20%] right-0 bg-white flex flex-col items-start justify-center p-6 md:p-8 w-full md:w-[550px] lg:w-[550px] rounded-tl-[50px] rounded-bl-lg">
                         <div className="font-bold text-lg md:text-2xl mb-4">Connect With Us Today<br/>Let's Build A Solution</div>
                     
                         <label className="text-xs md:text-sm font-semibold text-slate-500">Company Name</label>
@@ -287,7 +371,7 @@ export function LandingPage(){
                             Reach out to us
                         </button>
                     </div>
-                    <img alt="neonglobe" className="absolute block -left-0 md:-left-60 lg:left-0 w-auto h-auto lg:w-[600px] rounded-tl-2xl rounded-br-[80px]" src="/img/supportimg.jpg"/>
+                    <img alt="neonglobe" className="bounced1 absolute block -left-0 md:-left-60 lg:left-0 w-auto h-auto lg:w-[600px] rounded-tl-2xl rounded-br-[80px]" src="/img/supportimg.jpg"/>
                 </div>
             </div>
 
